@@ -1,0 +1,54 @@
+﻿@model Teste_Tecnico_Frutas.Models.Fruta
+
+@{
+    ViewData["Title"] = "Delete";
+}
+@if (TempData["Confirmacao"] != null)
+{
+      <div class="alert alert-primary" role="alert">@TempData["Confirmacao"]</div>
+
+}
+<div class="card col-md-5">
+ <div class="card-body">
+<h2>Deletar</h2>
+<h5>Você tem certeza que deseja deletar ?</h5>
+<div>
+   
+    <hr />
+    <dl class="row col-md-12">
+        <dt class = "col-sm-5">
+           Descrição:
+        </dt>
+        <dd class = "col-sm-5">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-5">
+            Valor A:
+        </dt>
+        <dd class = "col-sm-5">
+            @Html.DisplayFor(model => model.A)
+        </dd>
+        <dt class = "col-sm-5">
+            Valor B:
+        </dt>
+        <dd class = "col-sm-5">
+            @Html.DisplayFor(model => model.B)
+        </dd>
+        <dt class = "col-sm-5">
+            Resultado:
+        </dt>
+        <dd class = "col-sm-5">
+            @Html.DisplayFor(model => model.Resultado)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+         <button type="submit" value="Delete" class="btn btn-info">Deletar</button>
+           <a asp-action="Index">
+              <button type="button" class="btn btn-outline-info">Voltar</button>
+           </a>
+    </form>
+</div>
+</div>
+</div>

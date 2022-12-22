@@ -1,0 +1,59 @@
+﻿@model Teste_Tecnico_Frutas.Models.Fruta
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Calcular";
+}
+
+
+    <div class="container">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" >Calcular</h3>
+             <button class="close" data-dismiss="modal"><i class="fa-solid fa-xmark"></i></button> 
+          </div>
+          <form id="formValidate" >
+               <div class="modal-body">
+             
+                 <input  type="hidden" id="Id" name="Id" value="@Model.Id" class="form-control"/>
+                    <div class="form-group">
+                        <label class="control-label">Descrição</label>
+                        <input id="DESCRICAO" requerid name="DESCRICAO" value="@Model.Descricao"class="form-control"/>
+                       
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Valor A</label>
+                       <input id="A" name="A" requerid value="@Model.A"class="form-control" />
+                       
+                    </div>
+                    <div class="form-group">
+                        <label  class="control-label">Valor B</label>
+                        <input id="B" name="B" required value="@Model.B" class="form-control" />
+                        
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Resultado</label>
+                        <input id="RESULTADO" name="RESULTADO" value="" class="form-control" />
+                        
+                    </div>
+                   <span class="erromsg"></span>
+               </div>
+            
+            </form>
+              <div class="modal-footer">
+                <button type="submit"  onclick="Multiplicar()" class="btn btn-outline-info">Multiplicar</button>
+                <button type="submit"  onclick="Dividir()" class="btn btn-outline-info">Dividir </button>
+              </div> 
+            
+
+        </div>
+      </div>
+    </div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+       
+
+    }
